@@ -17,4 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::group([
+    'prefix' => '',
+    'namespace' => 'Home',
+], function() {
+    Route::get('/home', 'HomeController@index');
+});
